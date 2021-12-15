@@ -36,3 +36,7 @@
 
 - Types are used by TypeScript Compiler to analyze our code for errors
 - Allows other engineers to understand the codebase
+
+### When to use Types?
+
+- Everywhere!
