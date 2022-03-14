@@ -18,3 +18,30 @@ npm install -g parcel-bundler
 - To solve this problem, TypeScript has a concept of Type defination files. Type defination files act as an adapter between the Typescript code that we write and the Javascript code in the libraries
 - Sometimes type defination files are installed automatically with the libraries we install (example: axios). Or else, we'll need to install the type defination files manually
 - Definitely types naming schema: `@types/{library name}`
+- Type defination files have an extension as: `.d.ts`
+- The type definations file will only contain the type declaration of objects, functions etc and not actual code
+- It can be used as a part of documentation
+
+## Notes
+
+```ts
+location: {
+  lat: number;
+  lng: number;
+}
+```
+
+- This is a type defination. It doesn'te create the object automatically. `location` is still `undefined`
+- When we just `export` we get it as an object in other files where we import. `export default` exports just a specific variable. In TypeScript we mostly don't use `export default`
+- We can use type definations for not only npm packages, but also for the libraries through `script` tags
+
+```ts
+addMarkar(mappable: User | Company): void {
+```
+
+- Here you can use only the properties which are common between `User` and `Company` objects. We are not allowed to use other properties
+- To set up direcr dependency or in other works make sure if a class satisfies all the required properties of the interface, simply implement the interface
+
+```ts
+export class User implements Mappable {
+```
