@@ -1,18 +1,13 @@
 import { CharacterCollection } from "./CharactersCollection";
 import { LinkedList } from "./LinkedList";
 import { NumbersCollection } from "./NumbersCollection";
-import { Sorter } from "./Sorter";
 
 const numbersCollection = new NumbersCollection([10, 3, -5, 0]);
-const numbersSorter = new Sorter(numbersCollection);
-
-const charactersCollection = new CharacterCollection("Xaayb");
-const charactersSorter = new Sorter(charactersCollection);
-
-numbersSorter.sort();
+numbersCollection.sort();
 console.log(numbersCollection.data);
 
-charactersSorter.sort();
+const charactersCollection = new CharacterCollection("Xaayb");
+charactersCollection.sort();
 console.log(charactersCollection.data);
 
 const linkedListCollection = new LinkedList();
@@ -21,7 +16,5 @@ linkedListCollection.add(3);
 linkedListCollection.add(-5);
 linkedListCollection.add(0);
 
-const linkedListSorter = new Sorter(linkedListCollection);
-linkedListSorter.sort();
-
+linkedListCollection.sort();
 linkedListCollection.print();
